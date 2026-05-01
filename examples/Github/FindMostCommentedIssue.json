@@ -1,0 +1,1307 @@
+{
+  "arguments": [
+    {
+      "name": "repository_url",
+      "description": "The URL of the GitHub repository whose most commented issue should be found (e.g., https://github.com/owner/repo)."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "most_commented_issue_title",
+      "description": "Title of the most commented issue in the specified GitHub repository."
+    }
+  ],
+  "steps": [
+    {
+      "method": "browser_open_url",
+      "description": "Open the GitHub repository page for the specified project.",
+      "arguments": [
+        {
+          "name": "url",
+          "source": "repository_url"
+        }
+      ]
+    },
+    {
+      "method": "browser_click_element",
+      "description": "Open the Issues tab to view the repository's issues list.",
+      "arguments": [
+        {
+          "name": "target",
+          "value": {
+            "tag": "a",
+            "classes": [],
+            "attrs": {
+              "href": "/NousResearch/hermes-agent/issues"
+            },
+            "text": "Issues * (*)",
+            "x": 99,
+            "y": 60,
+            "w": 130,
+            "h": 33,
+            "x_rel": 0.0575,
+            "w_rel": 0.0754,
+            "ancestors": [
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "logged-in",
+                  "env-production",
+                  "page-responsive"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "position-relative",
+                  "header-wrapper",
+                  "js-header-wrapper"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "react-partial",
+                "id": null,
+                "classes": [
+                  "loaded"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "header",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "role": "banner",
+                  "aria-label": "Global Navigation Menu"
+                }
+              },
+              {
+                "tag": "nav",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "aria-label": "Repository"
+                }
+              },
+              {
+                "tag": "ul",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "role": "list"
+                }
+              },
+              {
+                "tag": "li",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "a",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "href": "/NousResearch/hermes-agent/issues"
+                }
+              }
+            ],
+            "neighbors": [
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "data-testid": "top-nav-left"
+                },
+                "text": null,
+                "x": 0,
+                "y": 0,
+                "w": 100,
+                "h": 52,
+                "x_rel": 0,
+                "w_rel": 0.0579
+              },
+              {
+                "tag": "li",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Code",
+                "x": 16,
+                "y": 60,
+                "w": 75,
+                "h": 33,
+                "x_rel": 0.0093,
+                "w_rel": 0.0436
+              },
+              {
+                "tag": "a",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "href": "/NousResearch/hermes-agent"
+                },
+                "text": "Code",
+                "x": 16,
+                "y": 60,
+                "w": 75,
+                "h": 33,
+                "x_rel": 0.0093,
+                "w_rel": 0.0436
+              },
+              {
+                "tag": "li",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Pull requests * (*)",
+                "x": 238,
+                "y": 60,
+                "w": 175,
+                "h": 33,
+                "x_rel": 0.1376,
+                "w_rel": 0.1015
+              },
+              {
+                "tag": "a",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "href": "/NousResearch/hermes-agent/pulls"
+                },
+                "text": "Pull requests * (*)",
+                "x": 238,
+                "y": 60,
+                "w": 175,
+                "h": 33,
+                "x_rel": 0.1376,
+                "w_rel": 0.1015
+              },
+              {
+                "tag": "nav",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "aria-label": "Breadcrumbs"
+                },
+                "text": "* *",
+                "x": 100,
+                "y": 16,
+                "w": 1070,
+                "h": 32,
+                "x_rel": 0.0579,
+                "w_rel": 0.6191
+              },
+              {
+                "tag": "ol",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "* *",
+                "x": 100,
+                "y": 16,
+                "w": 228,
+                "h": 32,
+                "x_rel": 0.0579,
+                "w_rel": 0.1322
+              },
+              {
+                "tag": "li",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "*",
+                "x": 100,
+                "y": 16,
+                "w": 121,
+                "h": 32,
+                "x_rel": 0.0579,
+                "w_rel": 0.0698
+              },
+              {
+                "tag": "a",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "href": "/NousResearch"
+                },
+                "text": "*",
+                "x": 100,
+                "y": 16,
+                "w": 106,
+                "h": 32,
+                "x_rel": 0.0579,
+                "w_rel": 0.0611
+              },
+              {
+                "tag": "li",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "*",
+                "x": 221,
+                "y": 16,
+                "w": 108,
+                "h": 32,
+                "x_rel": 0.1276,
+                "w_rel": 0.0624
+              },
+              {
+                "tag": "a",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "href": "/NousResearch/hermes-agent"
+                },
+                "text": "*",
+                "x": 221,
+                "y": 16,
+                "w": 108,
+                "h": 32,
+                "x_rel": 0.1276,
+                "w_rel": 0.0624
+              },
+              {
+                "tag": "a",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "type": "button",
+                  "href": "/"
+                },
+                "text": null,
+                "x": 60,
+                "y": 16,
+                "w": 32,
+                "h": 32,
+                "x_rel": 0.0347,
+                "w_rel": 0.0185
+              },
+              {
+                "tag": "svg",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 60,
+                "y": 16,
+                "w": 32,
+                "h": 32,
+                "x_rel": 0.0347,
+                "w_rel": 0.0185
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "*",
+                "x": 106,
+                "y": 20,
+                "w": 94,
+                "h": 24,
+                "x_rel": 0.0613,
+                "w_rel": 0.0541
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "*",
+                "x": 227,
+                "y": 20,
+                "w": 96,
+                "h": 24,
+                "x_rel": 0.1311,
+                "w_rel": 0.0555
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Code",
+                "x": 48,
+                "y": 66,
+                "w": 35,
+                "h": 21,
+                "x_rel": 0.0278,
+                "w_rel": 0.0205
+              }
+            ],
+            "children": [
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 107,
+                "y": 68,
+                "w": 16,
+                "h": 16,
+                "x_rel": 0.0622,
+                "w_rel": 0.0093
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Issues",
+                "x": 131,
+                "y": 66,
+                "w": 43,
+                "h": 21,
+                "x_rel": 0.0761,
+                "w_rel": 0.025
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "* (*)",
+                "x": 183,
+                "y": 67,
+                "w": 39,
+                "h": 18,
+                "x_rel": 0.1057,
+                "w_rel": 0.0226
+              }
+            ],
+            "special": {
+              "role": "list",
+              "tag": "ul",
+              "id": null,
+              "classes": [],
+              "attrs": {
+                "role": "list"
+              },
+              "text": "Code Issues * (*) Pull requests * (*) Actions Projects Security and quality Insights",
+              "x": 16,
+              "y": 60,
+              "w": 884,
+              "h": 33,
+              "x_rel": 0.0093,
+              "w_rel": 0.5117
+            }
+          }
+        }
+      ]
+    },
+    {
+      "method": "browser_click_element",
+      "description": "Open the sort menu for issues to change the ordering.",
+      "arguments": [
+        {
+          "name": "target",
+          "value": {
+            "tag": "span",
+            "classes": [],
+            "attrs": {},
+            "text": "Sort by Newest , descending",
+            "x": 1388,
+            "y": 297,
+            "w": 50,
+            "h": 21,
+            "x_rel": 0.8035,
+            "w_rel": 0.0287,
+            "ancestors": [
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "logged-in",
+                  "env-production",
+                  "page-responsive"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "application-main"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "turbo-frame",
+                "id": "repo-content-turbo-frame",
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "react-app",
+                "id": null,
+                "classes": [
+                  "loaded"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "role": "toolbar",
+                  "aria-label": "Actions"
+                }
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "button",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "type": "button"
+                }
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              }
+            ],
+            "neighbors": [
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1364,
+                "y": 300,
+                "w": 16,
+                "h": 16,
+                "x_rel": 0.7896,
+                "w_rel": 0.0093
+              },
+              {
+                "tag": "svg",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1364,
+                "y": 300,
+                "w": 16,
+                "h": 16,
+                "x_rel": 0.7896,
+                "w_rel": 0.0093
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1446,
+                "y": 300,
+                "w": 16,
+                "h": 16,
+                "x_rel": 0.8368,
+                "w_rel": 0.0093
+              },
+              {
+                "tag": "svg",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1446,
+                "y": 300,
+                "w": 16,
+                "h": 16,
+                "x_rel": 0.8368,
+                "w_rel": 0.0093
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "d-flex",
+                  "flex-wrap"
+                ],
+                "attrs": {},
+                "text": "Labels Milestones New issue",
+                "x": 1156,
+                "y": 235,
+                "w": 324,
+                "h": 32,
+                "x_rel": 0.6689,
+                "w_rel": 0.1876
+              },
+              {
+                "tag": "a",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "type": "button",
+                  "href": "/NousResearch/hermes-agent/issues/new/choose"
+                },
+                "text": "New issue",
+                "x": 1387,
+                "y": 235,
+                "w": 93,
+                "h": 32,
+                "x_rel": 0.8025,
+                "w_rel": 0.054
+              },
+              {
+                "tag": "a",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "type": "button",
+                  "href": "/NousResearch/hermes-agent/milestones"
+                },
+                "text": "Milestones",
+                "x": 1257,
+                "y": 235,
+                "w": 122,
+                "h": 32,
+                "x_rel": 0.7275,
+                "w_rel": 0.0703
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "data-testid": "list-row-assigned-agents"
+                },
+                "text": null,
+                "x": 1361,
+                "y": 332,
+                "w": 45,
+                "h": 64,
+                "x_rel": 0.7876,
+                "w_rel": 0.026
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "data-testid": "list-row-assignees"
+                },
+                "text": null,
+                "x": 1414,
+                "y": 332,
+                "w": 45,
+                "h": 64,
+                "x_rel": 0.8183,
+                "w_rel": 0.026
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "New issue",
+                "x": 1400,
+                "y": 241,
+                "w": 67,
+                "h": 21,
+                "x_rel": 0.81,
+                "w_rel": 0.039
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "New issue",
+                "x": 1400,
+                "y": 241,
+                "w": 67,
+                "h": 21,
+                "x_rel": 0.81,
+                "w_rel": 0.039
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Types",
+                "x": 1258,
+                "y": 292,
+                "w": 90,
+                "h": 32,
+                "x_rel": 0.7279,
+                "w_rel": 0.0519
+              },
+              {
+                "tag": "button",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "type": "button",
+                  "aria-label": "Filter by issue type",
+                  "data-testid": "issue-types-anchor-button"
+                },
+                "text": "Types",
+                "x": 1258,
+                "y": 292,
+                "w": 90,
+                "h": 32,
+                "x_rel": 0.7279,
+                "w_rel": 0.0519
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Milestones",
+                "x": 1270,
+                "y": 241,
+                "w": 96,
+                "h": 21,
+                "x_rel": 0.735,
+                "w_rel": 0.0553
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Milestones",
+                "x": 1294,
+                "y": 241,
+                "w": 72,
+                "h": 21,
+                "x_rel": 0.7489,
+                "w_rel": 0.0414
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "data-testid": "list-row-comments"
+                },
+                "text": null,
+                "x": 1308,
+                "y": 332,
+                "w": 45,
+                "h": 64,
+                "x_rel": 0.7569,
+                "w_rel": 0.026
+              }
+            ],
+            "children": [
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [
+                  "sr-only"
+                ],
+                "attrs": {},
+                "text": "Sort by",
+                "x": 1388,
+                "y": 297,
+                "w": 1,
+                "h": 1,
+                "x_rel": 0.8035,
+                "w_rel": 0.0006
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [
+                  "sr-only"
+                ],
+                "attrs": {},
+                "text": ", descending",
+                "x": 1438,
+                "y": 297,
+                "w": 1,
+                "h": 1,
+                "x_rel": 0.8322,
+                "w_rel": 0.0006
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "method": "browser_click_element",
+      "description": "Select the Total comments option to sort issues by number of comments.",
+      "arguments": [
+        {
+          "name": "target",
+          "value": {
+            "tag": "span",
+            "classes": [],
+            "attrs": {},
+            "text": "Total comments",
+            "x": 1391,
+            "y": 436,
+            "w": 136,
+            "h": 20,
+            "x_rel": 0.8053,
+            "w_rel": 0.0787,
+            "ancestors": [
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "logged-in",
+                  "env-production",
+                  "page-responsive"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": "__primerPortalRoot__",
+                "classes": [],
+                "attrs": {
+                  "role": "region"
+                }
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "role": "none"
+                }
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "ul",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "role": "menu"
+                }
+              },
+              {
+                "tag": "li",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "role": "none"
+                }
+              },
+              {
+                "tag": "ul",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "role": "group",
+                  "aria-label": "Sort by"
+                }
+              },
+              {
+                "tag": "li",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "role": "menuitemradio"
+                }
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              }
+            ],
+            "neighbors": [
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "MetadataContainer-module__container__*",
+                  "IssueItem-module__ListItem_0__*"
+                ],
+                "attrs": {},
+                "text": null,
+                "x": 1255,
+                "y": 397,
+                "w": 220,
+                "h": 64,
+                "x_rel": 0.7263,
+                "w_rel": 0.1273
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "Metadata-module__metadata__*",
+                  "Metadata-module__secondary__*",
+                  "Metadata-module__alignRight__*",
+                  "IssueItemMetadata-module__ListItemMetadata_0__*"
+                ],
+                "attrs": {
+                  "data-testid": "list-row-assigned-agents"
+                },
+                "text": null,
+                "x": 1361,
+                "y": 397,
+                "w": 45,
+                "h": 64,
+                "x_rel": 0.7876,
+                "w_rel": 0.026
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "Metadata-module__metadata__*",
+                  "Metadata-module__secondary__*",
+                  "Metadata-module__alignRight__*",
+                  "IssueItemMetadata-module__ListItemMetadata_0__*"
+                ],
+                "attrs": {
+                  "data-testid": "list-row-assignees"
+                },
+                "text": null,
+                "x": 1414,
+                "y": 397,
+                "w": 45,
+                "h": 64,
+                "x_rel": 0.8183,
+                "w_rel": 0.026
+              },
+              {
+                "tag": "li",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "role": "menuitemradio"
+                },
+                "text": "Last updated",
+                "x": 1359,
+                "y": 398,
+                "w": 176,
+                "h": 32,
+                "x_rel": 0.7867,
+                "w_rel": 0.1019
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Last updated",
+                "x": 1359,
+                "y": 398,
+                "w": 176,
+                "h": 32,
+                "x_rel": 0.7867,
+                "w_rel": 0.1019
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1367,
+                "y": 436,
+                "w": 16,
+                "h": 20,
+                "x_rel": 0.7914,
+                "w_rel": 0.0093
+              },
+              {
+                "tag": "svg",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1367,
+                "y": 438,
+                "w": 16,
+                "h": 16,
+                "x_rel": 0.7914,
+                "w_rel": 0.0093
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Last updated",
+                "x": 1391,
+                "y": 404,
+                "w": 136,
+                "h": 20,
+                "x_rel": 0.8053,
+                "w_rel": 0.0787
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Last updated",
+                "x": 1391,
+                "y": 404,
+                "w": 136,
+                "h": 20,
+                "x_rel": 0.8053,
+                "w_rel": 0.0787
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1367,
+                "y": 404,
+                "w": 16,
+                "h": 20,
+                "x_rel": 0.7914,
+                "w_rel": 0.0093
+              },
+              {
+                "tag": "svg",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1367,
+                "y": 406,
+                "w": 16,
+                "h": 16,
+                "x_rel": 0.7914,
+                "w_rel": 0.0093
+              },
+              {
+                "tag": "li",
+                "id": null,
+                "classes": [],
+                "attrs": {
+                  "role": "menuitemradio"
+                },
+                "text": "Best match",
+                "x": 1359,
+                "y": 462,
+                "w": 176,
+                "h": 32,
+                "x_rel": 0.7867,
+                "w_rel": 0.1019
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Best match",
+                "x": 1359,
+                "y": 462,
+                "w": 176,
+                "h": 32,
+                "x_rel": 0.7867,
+                "w_rel": 0.1019
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "MetadataContainer-module__container__*",
+                  "IssueItem-module__ListItem_0__*"
+                ],
+                "attrs": {},
+                "text": null,
+                "x": 1255,
+                "y": 462,
+                "w": 220,
+                "h": 64,
+                "x_rel": 0.7263,
+                "w_rel": 0.1273
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "Metadata-module__metadata__*",
+                  "Metadata-module__secondary__*",
+                  "Metadata-module__alignRight__*",
+                  "IssueItemMetadata-module__ListItemMetadata_0__*"
+                ],
+                "attrs": {
+                  "data-testid": "list-row-assigned-agents"
+                },
+                "text": null,
+                "x": 1361,
+                "y": 462,
+                "w": 45,
+                "h": 64,
+                "x_rel": 0.7876,
+                "w_rel": 0.026
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "Metadata-module__metadata__*",
+                  "Metadata-module__secondary__*",
+                  "Metadata-module__alignRight__*",
+                  "IssueItemMetadata-module__ListItemMetadata_0__*"
+                ],
+                "attrs": {
+                  "data-testid": "list-row-assignees"
+                },
+                "text": null,
+                "x": 1414,
+                "y": 462,
+                "w": 45,
+                "h": 64,
+                "x_rel": 0.8183,
+                "w_rel": 0.026
+              }
+            ],
+            "children": [
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Total comments",
+                "x": 1391,
+                "y": 436,
+                "w": 136,
+                "h": 20,
+                "x_rel": 0.8053,
+                "w_rel": 0.0787
+              }
+            ],
+            "special": {
+              "role": "list",
+              "tag": "ul",
+              "id": null,
+              "classes": [],
+              "attrs": {
+                "role": "group",
+                "aria-label": "Sort by"
+              },
+              "text": "Created on Last updated Total comments Best match Reactions",
+              "x": 1351,
+              "y": 366,
+              "w": 192,
+              "h": 160,
+              "x_rel": 0.7821,
+              "w_rel": 0.1111
+            }
+          }
+        }
+      ]
+    },
+    {
+      "method": "browser_get_element_text",
+      "description": "Read the title of the top-listed issue, which is now the most commented issue.",
+      "arguments": [
+        {
+          "name": "target",
+          "value": {
+            "tag": "a",
+            "classes": [
+              "Title-module__anchor__*",
+              "Title-module__inline__*",
+              "IssuePullRequestTitle-module__ListItemTitle_1__*"
+            ],
+            "attrs": {
+              "data-testid": "issue-pr-title-link"
+            },
+            "ancestors": [
+              {
+                "tag": "h3",
+                "id": null,
+                "classes": [
+                  "Title-module__heading__*",
+                  "IssuePullRequestTitle-module__ListItemTitle_0__*"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "Title-module__container__*"
+                ],
+                "attrs": {
+                  "data-listview-item-title-container": "true"
+                }
+              },
+              {
+                "tag": "li",
+                "id": "_r_*_-list-view-node-_r_*_",
+                "classes": [
+                  "ListItem-module__listItem__*"
+                ],
+                "attrs": {
+                  "role": "listitem"
+                }
+              },
+              {
+                "tag": "ul",
+                "id": null,
+                "classes": [
+                  "ListView-module__ul__*"
+                ],
+                "attrs": {
+                  "role": "list"
+                }
+              }
+            ],
+            "neighbors": []
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "most_commented_issue_title",
+          "value": "text"
+        }
+      ]
+    }
+  ]
+}

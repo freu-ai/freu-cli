@@ -1,0 +1,557 @@
+{
+  "arguments": [
+    {
+      "name": "repository_url",
+      "description": "The full URL of the GitHub repository to star (e.g., https://github.com/owner/repo)."
+    }
+  ],
+  "outputs": [],
+  "steps": [
+    {
+      "method": "browser_open_url",
+      "description": "Open the GitHub repository page.",
+      "arguments": [
+        {
+          "name": "url",
+          "source": "repository_url"
+        }
+      ]
+    },
+    {
+      "method": "browser_click_element",
+      "description": "Click the Star button to star the repository.",
+      "arguments": [
+        {
+          "name": "target",
+          "value": {
+            "tag": "button",
+            "classes": [
+              "js-toggler-target",
+              "rounded-left-2",
+              "btn-with-aria-count",
+              "btn-sm",
+              "btn",
+              "BtnGroup-item"
+            ],
+            "attrs": {
+              "type": "submit",
+              "aria-label": "Star this repository (*)"
+            },
+            "text": "Star *",
+            "x": 1411,
+            "y": 116,
+            "w": 123,
+            "h": 28,
+            "x_rel": 0.7349,
+            "w_rel": 0.0641,
+            "ancestors": [
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "logged-in",
+                  "env-production",
+                  "page-responsive"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "application-main"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "turbo-frame",
+                "id": "repo-content-turbo-frame",
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": "repo-content-pjax-container",
+                "classes": [
+                  "repository-content"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "react-app",
+                "id": null,
+                "classes": [
+                  "loaded"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "container-xl"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "header",
+                "id": null,
+                "classes": [
+                  "tmp-px-3",
+                  "tmp-px-lg-5"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "rails-partial",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": "repository-container-header",
+                "classes": [
+                  "tmp-pt-3",
+                  "hide-full-screen"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "d-flex",
+                  "flex-nowrap",
+                  "flex-justify-end",
+                  "tmp-mb-3"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": "repository-details-container",
+                "classes": [
+                  "flex-shrink-0"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "ul",
+                "id": null,
+                "classes": [
+                  "pagehead-actions",
+                  "flex-shrink-0",
+                  "d-none",
+                  "d-md-inline"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "li",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "js-toggler-container",
+                  "js-social-container",
+                  "starring-container",
+                  "starring-container--with-list-menu",
+                  "d-flex"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "unstarred",
+                  "BtnGroup",
+                  "ml-0",
+                  "tmp-ml-0",
+                  "flex-1"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "form",
+                "id": null,
+                "classes": [
+                  "js-social-form",
+                  "BtnGroup-parent",
+                  "flex-auto"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "button",
+                "id": null,
+                "classes": [
+                  "js-toggler-target",
+                  "rounded-left-2",
+                  "btn-with-aria-count",
+                  "btn-sm",
+                  "btn",
+                  "BtnGroup-item"
+                ],
+                "attrs": {
+                  "type": "submit",
+                  "aria-label": "Star this repository (*)"
+                }
+              }
+            ],
+            "neighbors": [
+              {
+                "tag": "user-list-menu",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1534,
+                "y": 116,
+                "w": 34,
+                "h": 28,
+                "x_rel": 0.799,
+                "w_rel": 0.0177
+              },
+              {
+                "tag": "select-panel",
+                "id": null,
+                "classes": [
+                  "BtnGroup-parent",
+                  "js-user-list-menu"
+                ],
+                "attrs": {},
+                "text": null,
+                "x": 1534,
+                "y": 116,
+                "w": 34,
+                "h": 28,
+                "x_rel": 0.799,
+                "w_rel": 0.0177
+              },
+              {
+                "tag": "button",
+                "id": null,
+                "classes": [
+                  "Button",
+                  "Button--iconOnly",
+                  "Button--secondary",
+                  "Button--small",
+                  "rounded-right-2",
+                  "rounded-left-0",
+                  "px-3",
+                  "tmp-px-3"
+                ],
+                "attrs": {
+                  "type": "button"
+                },
+                "text": null,
+                "x": 1534,
+                "y": 116,
+                "w": 34,
+                "h": 28,
+                "x_rel": 0.799,
+                "w_rel": 0.0177
+              },
+              {
+                "tag": "li",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": "Fork *",
+                "x": 1244,
+                "y": 116,
+                "w": 159,
+                "h": 28,
+                "x_rel": 0.6479,
+                "w_rel": 0.0829
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "BtnGroup",
+                  "d-flex"
+                ],
+                "attrs": {},
+                "text": "Fork *",
+                "x": 1244,
+                "y": 116,
+                "w": 159,
+                "h": 28,
+                "x_rel": 0.6479,
+                "w_rel": 0.0829
+              },
+              {
+                "tag": "details",
+                "id": null,
+                "classes": [
+                  "details-reset",
+                  "details-overlay",
+                  "BtnGroup-parent",
+                  "d-inline-block",
+                  "position-relative"
+                ],
+                "attrs": {},
+                "text": null,
+                "x": 1369,
+                "y": 116,
+                "w": 34,
+                "h": 28,
+                "x_rel": 0.713,
+                "w_rel": 0.0177
+              },
+              {
+                "tag": "summary",
+                "id": null,
+                "classes": [
+                  "btn-sm",
+                  "btn",
+                  "BtnGroup-item",
+                  "px-2",
+                  "tmp-px-2",
+                  "float-none"
+                ],
+                "attrs": {
+                  "role": "button",
+                  "aria-label": "See your forks of this repository"
+                },
+                "text": null,
+                "x": 1369,
+                "y": 116,
+                "w": 34,
+                "h": 28,
+                "x_rel": 0.713,
+                "w_rel": 0.0177
+              },
+              {
+                "tag": "dialog-helper",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1534,
+                "y": 126,
+                "w": 34,
+                "h": 15,
+                "x_rel": 0.799,
+                "w_rel": 0.0177
+              },
+              {
+                "tag": "svg",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1543,
+                "y": 122,
+                "w": 16,
+                "h": 16,
+                "x_rel": 0.8036,
+                "w_rel": 0.0083
+              },
+              {
+                "tag": "svg",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1378,
+                "y": 122,
+                "w": 16,
+                "h": 16,
+                "x_rel": 0.7177,
+                "w_rel": 0.0083
+              },
+              {
+                "tag": "a",
+                "id": "fork-button",
+                "classes": [
+                  "btn-sm",
+                  "btn",
+                  "BtnGroup-item"
+                ],
+                "attrs": {
+                  "href": "/NousResearch/hermes-agent/fork"
+                },
+                "text": "Fork *",
+                "x": 1244,
+                "y": 116,
+                "w": 125,
+                "h": 28,
+                "x_rel": 0.6479,
+                "w_rel": 0.0651
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 352,
+                "y": 162,
+                "w": 1216,
+                "h": 1,
+                "x_rel": 0.1833,
+                "w_rel": 0.6333
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "border-bottom"
+                ],
+                "attrs": {},
+                "text": null,
+                "x": 352,
+                "y": 162,
+                "w": 1216,
+                "h": 1,
+                "x_rel": 0.1833,
+                "w_rel": 0.6333
+              }
+            ],
+            "children": [
+              {
+                "tag": "svg",
+                "id": null,
+                "classes": [],
+                "attrs": {},
+                "text": null,
+                "x": 1424,
+                "y": 122,
+                "w": 16,
+                "h": 16,
+                "x_rel": 0.7417,
+                "w_rel": 0.0083
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [
+                  "d-inline"
+                ],
+                "attrs": {},
+                "text": "Star",
+                "x": 1448,
+                "y": 122,
+                "w": 30,
+                "h": 15,
+                "x_rel": 0.7542,
+                "w_rel": 0.0159
+              },
+              {
+                "tag": "span",
+                "id": "repo-stars-counter-star",
+                "classes": [
+                  "Counter",
+                  "js-social-count"
+                ],
+                "attrs": {
+                  "aria-label": "* users starred this repository"
+                },
+                "text": "*",
+                "x": 1480,
+                "y": 120,
+                "w": 42,
+                "h": 20,
+                "x_rel": 0.7711,
+                "w_rel": 0.0216
+              }
+            ],
+            "special": {
+              "role": "list",
+              "tag": "ul",
+              "id": null,
+              "classes": [
+                "pagehead-actions",
+                "flex-shrink-0",
+                "d-none",
+                "d-md-inline"
+              ],
+              "attrs": {},
+              "text": "Watch * (*) Fork * Star *",
+              "x": 1568,
+              "y": 116,
+              "w": 0,
+              "h": 0,
+              "x_rel": 0.8167,
+              "w_rel": 0
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

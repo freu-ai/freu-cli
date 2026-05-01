@@ -1,0 +1,498 @@
+{
+  "arguments": [
+    {
+      "name": "repo_url",
+      "description": "The full URL of the GitHub repository whose project website should be found."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "project_website_url",
+      "description": "The URL of the project website linked from the GitHub repository page."
+    }
+  ],
+  "steps": [
+    {
+      "method": "browser_open_url",
+      "description": "Open the GitHub repository page for the given project.",
+      "arguments": [
+        {
+          "name": "url",
+          "source": "repo_url"
+        }
+      ]
+    },
+    {
+      "method": "browser_wait_for_element",
+      "description": "Wait for the project website link to be visible on the repository page.",
+      "arguments": [
+        {
+          "name": "target",
+          "value": {
+            "tag": "a",
+            "classes": [
+              "text-bold"
+            ],
+            "attrs": {
+              "role": "link",
+              "href": "https://hermes-agent.nousresearch.com"
+            },
+            "text": "hermes-agent.nousresearch.com",
+            "x": 1320,
+            "y": 269,
+            "w": 226,
+            "h": 17,
+            "x_rel": 0.6875,
+            "w_rel": 0.1175,
+            "ancestors": [
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "logged-in",
+                  "env-production",
+                  "page-responsive"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "application-main"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "turbo-frame",
+                "id": "repo-content-turbo-frame",
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": "repo-content-pjax-container",
+                "classes": [
+                  "repository-content"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "react-app",
+                "id": null,
+                "classes": [
+                  "loaded"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "container-xl"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "pr-2"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "rails-partial",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "BorderGrid"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "BorderGrid-row"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "BorderGrid-cell"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "hide-sm",
+                  "hide-md"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "tmp-my-3",
+                  "d-flex",
+                  "flex-items-center"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [
+                  "flex-auto",
+                  "min-width-0",
+                  "css-truncate-target",
+                  "width-fit"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "a",
+                "id": null,
+                "classes": [
+                  "text-bold"
+                ],
+                "attrs": {
+                  "role": "link",
+                  "href": "https://hermes-agent.nousresearch.com"
+                }
+              }
+            ],
+            "neighbors": [],
+            "children": []
+          }
+        },
+        {
+          "name": "timeout",
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "method": "browser_get_element_attribute",
+      "description": "Read the href attribute of the project website link to capture the project website URL.",
+      "arguments": [
+        {
+          "name": "target",
+          "value": {
+            "tag": "a",
+            "classes": [
+              "text-bold"
+            ],
+            "attrs": {
+              "role": "link",
+              "href": "https://hermes-agent.nousresearch.com"
+            },
+            "text": "hermes-agent.nousresearch.com",
+            "x": 1320,
+            "y": 269,
+            "w": 226,
+            "h": 17,
+            "x_rel": 0.6875,
+            "w_rel": 0.1175,
+            "ancestors": [
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "logged-in",
+                  "env-production",
+                  "page-responsive"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "application-main"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "turbo-frame",
+                "id": "repo-content-turbo-frame",
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": "repo-content-pjax-container",
+                "classes": [
+                  "repository-content"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "react-app",
+                "id": null,
+                "classes": [
+                  "loaded"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "container-xl"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "pr-2"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "rails-partial",
+                "id": null,
+                "classes": [],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "BorderGrid"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "BorderGrid-row"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "BorderGrid-cell"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "hide-sm",
+                  "hide-md"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "div",
+                "id": null,
+                "classes": [
+                  "tmp-my-3",
+                  "d-flex",
+                  "flex-items-center"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "span",
+                "id": null,
+                "classes": [
+                  "flex-auto",
+                  "min-width-0",
+                  "css-truncate-target",
+                  "width-fit"
+                ],
+                "attrs": {}
+              },
+              {
+                "tag": "a",
+                "id": null,
+                "classes": [
+                  "text-bold"
+                ],
+                "attrs": {
+                  "role": "link",
+                  "href": "https://hermes-agent.nousresearch.com"
+                }
+              }
+            ],
+            "neighbors": [],
+            "children": []
+          }
+        },
+        {
+          "name": "attribute",
+          "value": "href"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "project_website_url",
+          "value": "value"
+        }
+      ]
+    }
+  ]
+}
