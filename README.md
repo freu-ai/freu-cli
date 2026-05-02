@@ -2,6 +2,8 @@
 
 💸 **Cut your AI agent's token usage by up to 90%** — offload repeated tasks to deterministic programs. Record a browser session once with Freu CLI, and it's compiled into a reusable *skill command*. From then on, your agent just loads the skill into its context window and invokes the command directly, skipping expensive DOM analysis and step-by-step reasoning on every run.
 
+![Freu CLI demo](assets/RealDemo.gif)
+
 👀 Vision-based desktop automation coming soon!
 
 
