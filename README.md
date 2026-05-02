@@ -1,13 +1,27 @@
-# 🦦 Freu CLI
+# 🦦 Freu CLI (Browser Edition)
 
-💸 **Cut your AI agent's token usage by up to 90%** — offload repeated tasks to deterministic programs. Record a browser session once with Freu CLI, and it's compiled into a reusable *skill command*. From then on, your agent just loads the skill into its context window and invokes the command directly, skipping expensive DOM analysis and step-by-step reasoning on every run.
+**The first release of the Freu AI automation suite, focused on high-efficiency web orchestration.**
 
-![Freu CLI demo](assets/RealDemo.gif)
+💸 **Cut your AI agent's token usage by up to 90%** — offload repeated tasks to deterministic programs.
 
-👀 Vision-based desktop automation coming soon!
+> [!IMPORTANT]
+> 👀 **Next up: OS-level Computer Use Agent (CUA).** We are actively extending the Freu AOT pipeline to vision-based desktop automation. Star this repo to stay updated on the upcoming Desktop Edition.
 
+Instead of forcing your agent to act as a Just-In-Time (JIT) interpreter that parses the DOM on every single run, Freu CLI acts as an **Ahead-of-Time (AOT) compiler**. Record a browser session once, and Freu compiles it into a reusable, deterministic _skill command_. Your agent simply loads the skill into its context window and executes it, skipping the expensive visual reasoning entirely.
 
-```
+![Freu CLI Demo](assets/RealDemo.gif)
+
+---
+
+## 🔄 The Workflow
+
+Freu is designed to bring stability to complex enterprise workflows by giving agents "muscle memory":
+
+1. **Human Teaches (Record):** Perform the target workflow in the browser normally—click, type, and navigate.
+2. **Freu Compiles (Build):** Freu filters DOM noise and compiles raw events into a semantic DSL (Domain-Specific Language) as a `SKILL.md` and JSON files.
+3. **Agent Executes (Run):** Drop the skill into your agent's directory (e.g., your local Hermes agent). The agent now invokes the command directly, bypassing costly LLM inference for navigation.
+
+```text
 +-----------------------+     HTTP (127.0.0.1:8787)      +----------------+
 |  Chrome extension     | <----------------------------> |  freu-cli      |
 |  (user interaction &  |                                |  bridge        |
@@ -20,6 +34,42 @@
                            learn (capture + LLM)         run <- skill
                            -> SKILL.md + <Cmd>.json      DSL steps
                            + log/ intermediates
+```
+
+---
+
+## ✨ Why Freu?
+
+- **Total Cost Reduction (90%+):** We eliminate the recurring cost of UI navigation by splitting the token economics into two phases:
+  1. **Phase 1: Compilation Cost (One-time):** You spend ~50k tokens _once_ during the `freu-cli learn` phase. The LLM acts as a compiler to analyze the DOM and build the skill.
+  2. **Phase 2: Execution Cost (Recurring):** **0 DOM tokens.** Your agent runs the pre-compiled command directly. It never has to "see" or "reason about" the HTML again.
+- **Self-Healing Selectors (Constellations):** Freu captures a **semantic constellation** (element + ancestors + semantic anchors). Even if the page CSS classes change or layout shifts, the skill remains stable without needing to be re-compiled.
+- **Smart Value Retrieval:** When the objective involves data extraction ("find the price"), Freu's compiler automatically identifies the value-bearing element and binds it as a command output.
+
+---
+
+## 📄 Inside a Skill (The DSL)
+
+Freu compiles workflows into clean, agent-readable JSON that serves as "structured muscle memory."
+
+```json
+{
+  "name": "StarRepository",
+  "description": "Open a GitHub repository by URL and star it.",
+  "steps": [
+    {
+      "action": "navigate_web",
+      "target": "{{repository_url}}"
+    },
+    {
+      "action": "click_element",
+      "semantic_anchor": "Star button",
+      "constellation": {
+        // Pruned DOM context ensures the skill self-heals
+      }
+    }
+  ]
+}
 ```
 
 ---
@@ -41,18 +91,18 @@ See [here](https://github.com/freu-ai/browser-automater-extension).
 and routes the call through [LiteLLM](https://github.com/BerriAI/litellm),
 so any of these providers work — just export the matching API key:
 
-| Provider   | Example `LLM_MODEL`           | Required env         |
-|------------|-------------------------------|----------------------|
-| OpenAI     | `gpt-5.1` *(default)*         | `OPENAI_API_KEY`     |
-| Anthropic  | `claude-sonnet-4-5`           | `ANTHROPIC_API_KEY`  |
-| Google     | `gemini/gemini-2.5-pro`       | `GEMINI_API_KEY`     |
-| xAI        | `xai/grok-4`                  | `XAI_API_KEY`        |
-| MiniMax    | `minimax/MiniMax-M2`          | `MINIMAX_API_KEY`    |
+| Provider  | Example `LLM_MODEL`     | Required env        |
+| --------- | ----------------------- | ------------------- |
+| OpenAI    | `gpt-5.1` _(default)_   | `OPENAI_API_KEY`    |
+| Anthropic | `claude-sonnet-4-5`     | `ANTHROPIC_API_KEY` |
+| Google    | `gemini/gemini-2.5-pro` | `GEMINI_API_KEY`    |
+| xAI       | `xai/grok-4`            | `XAI_API_KEY`       |
+| MiniMax   | `minimax/MiniMax-M2`    | `MINIMAX_API_KEY`   |
 
 Any other provider LiteLLM supports works too — consult the
 [LiteLLM providers list](https://docs.litellm.ai/docs/providers) for the
 model-prefix and env-var names. If the required key is missing,
-`freu-cli learn` errors out *before* capture starts so you never record
+`freu-cli learn` errors out _before_ capture starts so you never record
 a session to find out afterwards.
 
 ---
@@ -186,6 +236,13 @@ The same shape is available programmatically on the result dict
 (`completed_steps`, `failed_step`, `error`) for callers wrapping
 `freu-cli run` from code.
 
+## 🧪 Running the tests
+
+```bash
+pip install -e .[dev]
+pytest
+```
+
 ## 🔌 Agent integrations
 
 Once you've learned a skill, drop it into your agent's skills directory
@@ -194,20 +251,13 @@ and it becomes available as a reusable command. Any agent that discovers
 automatically.
 
 | Agent       | Skills directory     | Example                                    |
-|-------------|----------------------|--------------------------------------------|
+| ----------- | -------------------- | ------------------------------------------ |
 | OpenClaw    | `~/.openclaw/skills` | `cp -R ./github-skill ~/.openclaw/skills/` |
 | Claude Code | `~/.claude/skills`   | `cp -R ./github-skill ~/.claude/skills/`   |
 | Codex CLI   | `~/.codex/skills`    | `cp -R ./github-skill ~/.codex/skills/`    |
 | Cursor      | `~/.cursor/skills`   | `cp -R ./github-skill ~/.cursor/skills/`   |
 | Hermes      | `~/.hermes/skills`   | `cp -R ./github-skill ~/.hermes/skills/`   |
 
-## 🧪 Running the tests
-
-```bash
-pip install -e .[dev]
-pytest
-```
-
-
 ## 📜 License
+
 GNU Affero General Public License. See [LICENSE](LICENSE).
